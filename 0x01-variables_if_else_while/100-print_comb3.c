@@ -15,8 +15,9 @@ int main(void)
 
 	while (i < 100)
 	{
-		j = i % 10;/*single digits*/
-		k = i % 10;/*double digits*/
+		j = i % 10; 
+		k = i / 10;
+
 		if (k < j)
 		{
 			putchar(k + '0');
@@ -28,7 +29,6 @@ int main(void)
 				putchar(32);
 			}
 		}
-
 		i++;
 	}
 	putchar('\n');
