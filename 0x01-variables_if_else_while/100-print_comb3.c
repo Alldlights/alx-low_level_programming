@@ -1,0 +1,36 @@
+#include <stdio.h>
+/**
+ * main - main block
+ * Description: Prints all possible combinations of two digits.
+ * Numbers must be separated by commas and a space.
+ * 01 and 10 are considered the same of the two digit combinations,
+ * Print the smallest combination of the two digits only.
+ * Return: 0
+ */
+int main(void)
+{
+	int i, j, k;
+
+	i = 0;
+
+	while (i < 100)
+	{
+		j = i % 10;/*single digits*/
+		k = i % 10;/*double digits*/
+		if (k < j)
+		{
+			putchar(k + '0');
+			putchar(j + '0');
+
+			if (i < 89)
+			{
+				putchar(44);
+				putchar(32);
+			}
+		}
+
+		i++;
+	}
+	putchar('\n');
+	return (0);
+}
