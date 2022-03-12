@@ -1,1 +1,1 @@
-This program will assign a random number to the variable
+This program talks about C - Variables, if, else, while
