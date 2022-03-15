@@ -2,8 +2,8 @@
 /**
  * time_table - prints the 9 times table, starting from 0.
  * rone = row, cone = column, d = digits of current result
- * Result: times table and extra space
- * Return: 0
+ * Return: times table
+ * adds extra space
  */
 void times_table(void)
 {
@@ -13,7 +13,7 @@ void times_table(void)
 	{
 		_putchar('0');
 		_putchar(',');
-		_putchar('.');
+		_putchar(' ');
 
 		for (cone = 1; cone <= 9; cone++)
 		{
@@ -34,5 +34,6 @@ void times_table(void)
 				_putchar(' ');
 			}
 		}
+		_putchar('\n');
 	}
 }
