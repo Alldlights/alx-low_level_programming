@@ -13,7 +13,7 @@ int main(void)
 
 	i = 0;
 
-	/**
+	/*
 	 * Description: cause the output to go into an infinte loop
 	 * while (i < 10)
 	 * {
