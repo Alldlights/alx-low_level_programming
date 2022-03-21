@@ -2,7 +2,7 @@
 
 /**
  * rev_string - a function that reverses a string.
- * @s: pointer to the string
+ * @s: pointer to get string from
  * Return: void
  */
 void rev_string(char *s)
@@ -18,8 +18,8 @@ void rev_string(char *s)
 
 	while (half--)
 	{
-		temp = s[len - i - l];
-		s[len - i - l] = s[i];
+		temp = s[len - i - 1];
+		s[len - i - 1] = s[i];
 		s[i] = temp;
 		i++;
 	}
