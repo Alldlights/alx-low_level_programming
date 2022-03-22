@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-include "main.h"
+#include <time.h>
 
 /**
  * main - generates random passwords for 101-crackme
- * Return: 0
+ * Return: zero
  */
 int main(void)
 {
