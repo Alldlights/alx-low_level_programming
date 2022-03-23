@@ -3,7 +3,7 @@
 /**
  * leet - encodes a string into 1337
  * @c: String
- * Return: String that is encoded
+ * Return: string that is encoded
  */
 char *leet(char c)
 {
@@ -16,7 +16,7 @@ char *leet(char c)
 	{
 		for (i = 0; i < sizeof(key) / sizeof(char); i++)
 		{
-			/*32 is the difference between lowercase letters and uppercase letters*/
+			/*32 is the difference between lower case letters and upper case letters*/
 			if (*c == key[i] || *c == key[i] + 32)
 			{
 				*c = 48 + value[i];
@@ -24,5 +24,7 @@ char *leet(char c)
 		}
 		c++;
 	}
+
 	return (cp);
+
 }
