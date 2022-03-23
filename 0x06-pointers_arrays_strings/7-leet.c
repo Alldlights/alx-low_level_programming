@@ -5,7 +5,7 @@
  * @c: String
  * Return: string that is encoded
  */
-char *leet(char c)
+char *leet(char *c)
 {
 	char *cp = c;
 	char key[] = {'A', 'E', 'O', 'T', 'L'};
