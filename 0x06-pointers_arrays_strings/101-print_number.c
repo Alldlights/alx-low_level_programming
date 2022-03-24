@@ -3,7 +3,7 @@
 /**
  * print_number - a function that prints an integer
  * @n: unsigned integer
- * Return: 0
+ * Return: void
  */
 void print_number(int n)
 {
