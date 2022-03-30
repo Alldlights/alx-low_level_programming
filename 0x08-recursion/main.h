@@ -2,6 +2,7 @@
 #define HOLBERTON_H
 
 int _putchar(char c);
+int palindrome(char *s, int first, int last);
 
 /* 0-puts_recursion.c */
 void _puts_recursion(char *s);
