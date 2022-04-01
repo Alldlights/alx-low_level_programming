@@ -9,7 +9,7 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int j, t, j;
+	int i, t, j;
 
 	i = 0;
 	while (s[i] != '\0')
@@ -17,7 +17,7 @@ char *_strpbrk(char *s, char *accept)
 		t = 0;
 		for (j = 0; accept[j] != '\0'; j++)
 		{
-			if (s[i] == accepts[j])
+			if (s[i] == accept[j])
 				t = 1;
 		}
 		j = 0;
