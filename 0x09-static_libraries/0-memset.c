@@ -1,21 +1,17 @@
 #include "main.h"
+#include <string.h>
 
 /**
- * _memset - check the code for Holberton School students.
- * @s: parameter for the array
- * @b: parameter for the values in the array
- * @n: parameter for the nuber of times to print the new values
- * Return: Always 0.
+ * _memset - this function fills the first n bytes of the memory area
+ * pointed to by s with the constant byte b
+ * @s: pointer to the block of memory to fill
+ * @b: this is the value to be set.
+ * @n: this is the number of bytes to set to the value
+ * Return: pointer to s
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int a = 0;
+memset(s, b, n);
 
-	while (a < n)
-	{
-		s[a] = b;
-		a++;
-	}
-
-	return (s);
+return (s);
 }

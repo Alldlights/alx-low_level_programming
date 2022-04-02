@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * _isdigit - check if c is a digit between 0 and 9.
- * @c: the integer to be supplied by user.
- * Return: 0 or 1.
+ * _isdigit - check for a digit
+ * @c: input number.
+ * Return: 1 if c is a digit, 0 otherwise
  */
-
 int _isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
