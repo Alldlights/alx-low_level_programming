@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * argstostr - concatenates all arguements of the program with a newline
+ * argstostr - concatenates all arguements of your program with a newline
  * @ac: argument count
  * @av: double pointer to array of strings passed to main
  * Return: NULL if fail, else return pointer to a new string
