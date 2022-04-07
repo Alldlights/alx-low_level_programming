@@ -13,5 +13,5 @@ void errors(void);
 int _strlen(char *s);
 int is_digit(char *s);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-int *mul(char *n1, char *n2);
+int *mul(char *num1, char *num2);
 #endif
