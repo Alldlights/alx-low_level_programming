@@ -3,6 +3,18 @@
 #include <stdlib.h>
 #include <string.h>
 /**
+ * is_digit - check if numbers are digit
+ * @s: input to be checked and supplied
+ * Return: 0
+ */
+int is_digit(char *s)
+{
+	if (s >= 48 && s <= 57)
+		printf("Error\n");
+	exit(98);
+}
+
+/**
  * main - multiplies two positive numbers
  * @argc: n arguments
  * @argv: args
