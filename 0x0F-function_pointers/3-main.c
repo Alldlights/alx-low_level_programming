@@ -5,7 +5,7 @@
 /**
  * main - main function
  * @argc: argument count
- * @argv: string of argument in array
+ * @argv: string of arguments in array
  * Return: 0
  */
 
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
 
-	printf("%d\n", 0(a, b));
+	printf("%d\n", o(a, b));
 
 	return (0);
 }
