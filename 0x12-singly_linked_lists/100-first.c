@@ -1,24 +1,25 @@
 #include <stdio.h>
 
 /**
- * bmain - function executed before main
- * Return: Always 0
+ * before_main - prints a statment before the main function
+ * Return: nothing.
  */
-void bmain(void) __attribute__ ((constructor)) int main(void);
+void before_main(void) __attribute__((constructor));
 
-void bmain(void)
+void before_main(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
 }
 
 /**
- * main - prints a string in a new line
- * Return: 0
+ * main - prints a statment and checks the code
+ *
+ * Return: 0;
  */
+
 int main(void)
 {
-	printf("(A tortise, having pretty good sense of a hare's nature
-		, challenges one to a race.)\n");
+	printf("(A tortise, having pretty good sense of a hare's nature, challenges one to a race.)\n");
 	return (0);
 }
