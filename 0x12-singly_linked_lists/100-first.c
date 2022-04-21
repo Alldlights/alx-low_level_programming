@@ -4,7 +4,7 @@
  * bmain - function executed before main
  * Return: Always 0
  */
-void bmain(void) __attribute__ ((constructor));
+void bmain(void) __attribute__ ((constructor)) int main(void);
 
 void bmain(void)
 {
