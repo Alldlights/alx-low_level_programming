@@ -3,7 +3,7 @@
  * before_main - Print statement within the finction
  * before main function is executed.
  */
-void __attribute__((constructor))
+void before_main(void)  __attribute__((constructor));
 
 void before_main(void)
 {
