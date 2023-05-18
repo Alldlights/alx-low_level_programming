@@ -1,9 +1,14 @@
 #include <stdio.h>
 
-int main ()
-{
-	char str1[100] = "Programming is like building a multilingual puzzle";
+/**
+ * main - Entry point
+ * 
+ * Return: Always 0 (Sucess)
+ */
 
-	puts(str1);
+int main(void)
+{
+	puts("\"Programming is like building a multilingual puzzle");
+
 	return (0);
 }
