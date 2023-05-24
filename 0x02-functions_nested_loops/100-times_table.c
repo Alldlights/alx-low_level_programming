@@ -10,38 +10,38 @@ void print_times_table(int n)
 {
 	int row, column, product;
 
-	if (n >= 0 && n <= 14)
+	if (n >= 0 && n < 15)
 	{
 		for (row = 0; row <= n; row++)
 		{
 			for (column = 0; column <= n; column++)
 			{
 				product = row * column;
-				if (product > 99)
+				if (column == 0)
+					_putchar('0');
+				else if (product < 10)
 				{
-					_putchar(',');
+					_putchar(44);
 					_putchar(32);
-					_putchar((product / 100) + '0');
-					_putchar(((product / 10) % 10) + '0');
-					_putchar((product % 10) + '0');
-				}
-				else if (product > 9)
-				{
-					_putchar(',');
 					_putchar(32);
-					_putchar(((product / 10) % 10) + '0');
-					_putchar((product % 10) + '0');
+					_putchar(32);
+					_putchar(product % 10 + '0');
 				}
-				else
+				else if (product >= 10 && product < 100)
 				{
-					if (column != 0)
-					{
-						_putchar(',');
-						_putchar(32);
-						_putchar(32);
-						_putchar(32);
-					}
-					_putchar(product + '0');
+					_putchar(44);
+					_putchar(32);
+					_putchar(32);
+					_putchar((product / 10) % 10 + '0');
+					_putchar(product % 10 + '0');
+				}
+				else if (product > 99 && product < 1000)
+				{
+					_putchar(44);
+					_putchar(32);
+					_putchar(product / 100 + '0');
+					_putchar((product / 10) % 10 + '0');
+					_putchar(product % 10 + '0');
 				}
 			}
 			_putchar('\n');
