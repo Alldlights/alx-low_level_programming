@@ -3,8 +3,8 @@
 /**
  * print_line - function that draws a straight line in the terminal
  * @n: number of times the character '_' should be printed.
- * Description: you can only use the derived _putchar() to print and 
- * the lines hould end in a new line. if n is 0 or less print a new line
+ * Description: you can only use the derived _putchar() to print and the lines
+ * printed whould end in a new line.
  *
  * Return: void on sucess
  */
