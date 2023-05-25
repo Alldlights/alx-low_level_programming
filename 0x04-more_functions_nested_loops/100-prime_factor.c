@@ -9,7 +9,7 @@
  * Return: 0 on success.
  */
 
-int main (void)
+int main(void)
 {
 	long count, largestPrime;
 	long bigNum = 612852475143;
