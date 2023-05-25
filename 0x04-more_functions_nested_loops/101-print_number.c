@@ -9,7 +9,7 @@
  * Return: void on success
  */
 
-void print_number(int n);
+void print_number(int n)
 {
 	unsigned int hold = n;
 	{
@@ -17,7 +17,7 @@ void print_number(int n);
 		{
 			n = n * -1;
 			hold = n;
-			Putchar('-');
+			_putchar('-');
 		}
 
 		hold = hold / 10;
@@ -26,6 +26,6 @@ void print_number(int n);
 		{
 			print_number(hold);
 		}
-		_putchar((unsigned int) n % 10 + '0);
+		_putchar((unsigned int) n % 10 + '0');
 	}
 }
