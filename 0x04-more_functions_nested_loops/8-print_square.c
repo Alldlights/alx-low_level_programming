@@ -23,7 +23,7 @@ void print_square(int size)
 
 		while (row < size)
 		{
-			for (coln = 0; coln <= size; coln++)
+			for (coln = 0; coln < size; coln++)
 			{
 				_putchar(35);
 			}
