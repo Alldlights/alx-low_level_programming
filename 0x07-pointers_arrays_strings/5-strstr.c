@@ -28,7 +28,6 @@ char *_strstr(char *haystack, char *needle)
 			{
 				break;
 			}
-			
 		}
 		if (a != b)
 		{
