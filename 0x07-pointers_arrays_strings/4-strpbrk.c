@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * strpbrk - function that searches for any of a set of bytes
+ * _strpbrk - function that searches for any of a set of bytes
  * @s: the pointer to the string variable
  * @accept: pointer to a string that occurs in s in an instance
  *
