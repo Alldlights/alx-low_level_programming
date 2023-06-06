@@ -13,17 +13,26 @@
 char *_strstr(char *haystack, char *needle)
 {
 	int a;
+	int b;
+
+	for (b = 0; neddle[b] != '\0'; b++)
+	{
+		;
+	}
 
 	while (*haystack)
 	{
 		for (a = 0; needle[a]; a++)
 		{
-			if (*haystack == needle[a])
+			if (haystack[a] != neddle[a])
 			{
-				return (needle);
+				break;
 			}
+			if (i != s)
+				haystack++;
+			else
+				return (haystack);
 		}
-		haystack++;
 	}
 	return (NULL);
 }
