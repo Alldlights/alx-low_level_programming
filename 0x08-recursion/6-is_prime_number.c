@@ -1,30 +1,35 @@
 #include "main.h"
-
 /**
- * is_prime_number - returns 1 if number is a prime number
- * @n: number to be checked
- *
- * Return: 1 on success else 0
- */
+ * is_prime_number -  Returns the natural square root of a number.
+ * @n: int type
+ * Return: char type
+ **/
 int is_prime_number(int n)
 {
-	return (check_prime_num(n, 1));
+if (n <= 1)
+{
+return (0);
+}
+return (is_prime(n, 2));
+
 }
 
 /**
- * check_prime_num - check if number is prime
- * @n: the number to be checked
- * @i: the iterated times
- *
- * Return: 1 for prime else 0
- */
-int check_prime_num(int n, int i)
+ * is_prime - Entry point
+ * Desc: is_prime
+ * @n: type int
+ * @x: type int
+ * Return: Function about prime numbers
+ **/
+int is_prime(int n, int x)
 {
-	if (n <= 1)
-		return (0);
-	if (n % 1 == 0 && i > 1)
-		return (0);
-	if ((n / i) < i)
-		return (1);
-	return (check_prime_num(n, i + 1));
+if (x < n)
+{
+if (n % x == 0)
+{
+return (0);
+}
+return (is_prime(n, x + 1));
+}
+return (1);
 }
