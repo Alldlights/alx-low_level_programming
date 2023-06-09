@@ -1,1 +1,1 @@
-Alx low level programming language directory with C programming language
+C - Static Libraries; creating, indexing, modifying and linking
