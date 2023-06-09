@@ -1,1 +1,2 @@
-C - Static Libraries; creating, indexing, modifying and linking
+Low level programming with C
+Functions and learning paths
