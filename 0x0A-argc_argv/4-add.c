@@ -27,8 +27,10 @@ int main(int argc, char **argv)
 			for (loop = 0; loop < strlen(str); loop++)
 			{
 				if (str[loop] < 48 || str[loop] > 57)
+				{
 					printf("Error\n");
-				return (1);
+					return (1);
+				}
 			}
 			sum += atoi(str);
 			str++;
