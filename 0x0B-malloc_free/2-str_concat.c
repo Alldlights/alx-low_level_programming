@@ -36,8 +36,11 @@ char *str_concat(char *s1, char *s2)
 		if (k <= i)
 			str[k] = s1[k];
 		if (k >= i)
+		{
 			str[k] = s2[j];
-		j++;
+			j++;
+		}
+		k++;
 	}
 	str[k] = '\0';
 	return (str);
