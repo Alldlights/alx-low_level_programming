@@ -1,2 +1,1 @@
-Low level programming with C
-Functions and learning paths
+C - More on singly linked list
