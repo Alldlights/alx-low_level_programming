@@ -6,15 +6,16 @@
  *
  * Retrun: Nothing
  */
-void print_binary(unsigned long int n);
+void print_binary(unsigned long int n)
 {
-	int i = 63, increment = 0;
+	int i, increment = 0;
 	unsigned long int binary_num;
 
-	while (i >= 0)
+	for (i = 63; i >= 0; i--)
 	{
 		binary_num = n >> i;
-		if (current & i)
+
+		if (binary_num & 1)
 		{
 			_putchar('1');
 			increment++;
@@ -23,10 +24,7 @@ void print_binary(unsigned long int n);
 		{
 			_putchar('0');
 		}
-		i--;
 	}
 	if (!increment)
-	{
 		_putchar('0');
-	}
 }
