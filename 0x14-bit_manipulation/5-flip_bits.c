@@ -16,9 +16,9 @@ unsigned int count_set_bits(unsigned long int num)
 	while (num)
 	{
 		num &= (num - 1);
-		count ++;
+		count++;
 	}
-	return count;
+	return (count);
 }
 
 /**
