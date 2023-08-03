@@ -14,10 +14,9 @@ int get_endianness(void)
 	} test;
 
 	test.num = 1;
-	
+
 	if (test.bytes[0] == 1)
 		return (1);
 	else
 		return (0);
 }
-	
