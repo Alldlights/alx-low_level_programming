@@ -2,6 +2,18 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <errno.h>
+/**
+ * exit_with_error - function that prints error message
+ * @exit_code: the exit code to exit
+ * @error_msg: the error message to print to the stdout
+ *
+ * Return: Nothing
+ */
+void exit_with_error(int exit_code, const char *error_msg)
+{
+	dprintf(STDERR_FILENO, "%s\n", error_msg);
+	exit(exit_code);
+}
 
 /**
  * main - program that copies content of a file to another file
@@ -16,16 +28,12 @@ int main(int argc, char *argv[])
 	char buff[BUFSIZ];
 
 	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
+		exit_with_error(97, "Usage: cp file_from file_to");
+
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
+		exit_with_error(98, "Error: Can't read from file");
+
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	while ((bytes_read = read(fd_from, buff, BUFSIZ)) > 0)
 	{
@@ -38,10 +46,7 @@ int main(int argc, char *argv[])
 	}
 
 	if (bytes_read < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
+		exit_with_error(98, "Error: Can't read from file");
 	close_frm = close(fd_from);
 	close_to = close(fd_to);
 	if (close_frm < 0 || close_to < 0)
