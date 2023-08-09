@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	while ((bytes_read = read(fd_from, buff, BUFSIZ)) > 0)
 	{
@@ -55,4 +54,3 @@ int main(int argc, char *argv[])
 	}
 	return (0);
 }
-	
