@@ -4,7 +4,7 @@
 /**
  * binary_to_unit - Function that converts a binary number
  * to an unsigned int
- * b: pointer to a string of 0 and 1 chars
+ * @b: pointer to a string of 0 and 1 chars
  *
  * Return: converted number or 0 if b is NULL, b is not 0 or 1
  */
@@ -14,7 +14,7 @@ unsigned int binary_to_unit(const char *b)
 	int i;
 
 	if (b == NULL)
-		return 0;
+		return (0);
 
 	for (i = 0; b[i] != '\0'; i++)
 	{
