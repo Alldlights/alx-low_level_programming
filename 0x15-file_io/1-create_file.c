@@ -1,22 +1,3 @@
-#include <stdio.h>
-
-/**
- * _strlen - Function that returns lenght of a string
- * @str: String to calculate its lenght
- *
- * Return: Lenght of string
- */
-size_t _strlen(const char *str)
-{
-	size_t len = 0;
-
-	while (str[len] != '\0')
-	{
-		len++;
-	}
-	return (len);
-}
-
 #include "main.h"
 
 /**
@@ -28,8 +9,7 @@ size_t _strlen(const char *str)
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd;
-	ssize_t text_len, bytes_written;
+	int fd, bytes_write, str_len = 0;
 
 	if (filename == NULL)
 		return (-1);
@@ -38,17 +18,16 @@ int create_file(const char *filename, char *text_content)
 	if (fd == -1)
 		return (-1);
 
-	if (text_content == NULL)
+	if (text_content)
 	{
-		text_len = _strlen(text_content);
-		bytes_written = write(fd, text_content, text_len);
-		if (bytes_written == -1)
-		{
-			close(fd);
+		while (text_content[str_len])
+			str_len++;
+		bytes_write = write(fd, text_content, str_len);
+		if (bytes_write != str_len)
 			return (-1);
-		}
 	}
 	close(fd);
+
 	return (1);
 }
 
