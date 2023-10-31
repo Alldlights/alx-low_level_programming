@@ -9,44 +9,52 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd_r, fd_w, bytes_read;
+	int fd_from, fd_to;
+	const char *file_from = argv[1], *file_to = argv[2];
 	char buf[BUFSIZ];
+	ssize_t bytes_read, bytes_written;
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
 		exit(97);
 	}
-	fd_r = open(argv[1], O_RDONLY);
-	if (fd_r < 0)
+	fd_from = open(file_from, O_RDONLY);
+	if (fd_from < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	fd_w = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	while ((bytes_read = read(fd_r, buf, BUFSIZ)) > 0)
+	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (fd_to < 0)
 	{
-		if (fd_w < 0 || write(fd_w, buf, bytes_read) != bytes_read)
+		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
+		exit(99);
+	}
+	while ((bytes_read = read(fd_from, buf, BUFSIZ)) > 0)
+	{
+		bytes_written = write(fd_to, buf, bytes_read);
+		if (bytes_written < 0)
 		{
-			dprintf(STDERR_FILENO, "Error: CAn't write to %s\n", argv[2]);
-			close(fd_r);
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
 			exit(99);
 		}
 	}
 	if (bytes_read < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: can't read from %s\n", file_from);
 		exit(98);
 	}
-	close(fd_r);
-	close(fd_w);
-	if (fd_r < 0 || fd_w < 0)
+	if (close(fd_from) < 0)
 	{
-		if (fd_r < 0)
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_r);
-		if (fd_w < 0)
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_w);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
+		exit(100);
+	}
+	if (close(fd_to) < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
 	return (0);
 }
+
