@@ -19,10 +19,10 @@ int main(int argc, char *argv[])
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from < 0)
 	{
-		dprinf(STDERR_FILENO, "Error: Can't read from %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[1]);
 		exit(98);
 	}
-	fd_to = read(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	while ((read_bytes = read(fd_from, buf, BUFSIZ)) > 0)
 	{
 		if (fd_to < 0 || write(fd_to, buf, read_bytes) != read_bytes)
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 	cl_to = close(fd_to);
 	if (cl_frm < 0 || cl_to < 0)
 	{
-		if (cl_from < 0)
+		if (cl_frm < 0)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 		if (cl_to < 0)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
