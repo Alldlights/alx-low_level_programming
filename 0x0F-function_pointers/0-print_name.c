@@ -12,5 +12,8 @@ void print_name(char *name, void (*f)(char *))
 
 	f_ptr = f;
 
+	if (!name || !f_ptr)
+		return;
+
 	f_ptr(name);
 }
