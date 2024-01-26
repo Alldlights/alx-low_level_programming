@@ -39,7 +39,7 @@ int op_mul(int a, int b)
  * @b: Second number
  * Return: Result of division of a and b
  */
-int op_div(int a , int b)
+int op_div(int a, int b)
 {
 	if (b == 0)
 	{
