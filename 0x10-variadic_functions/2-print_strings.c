@@ -10,6 +10,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 	char *str;
 	const char *msg = "(nil)";
+	const char *msg_ptr;
 	va_list args;
 	unsigned int i;
 
@@ -17,7 +18,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		str = va_arg(args, char *);
-		if (str != NULL)
+		if (str != NULL && *str != '\0')
 		{
 			while (*str != '\0')
 			{
@@ -27,10 +28,11 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		}
 		else
 		{
-			while (*msg != '\0')
+			msg_ptr = msg;
+			while (*msg_ptr != '\0')
 			{
-				_putchar(*msg);
-				msg++;
+				_putchar(*msg_ptr);
+				msg_ptr++;
 			}
 		}
 		if (i < n - 1 && separator != NULL)
