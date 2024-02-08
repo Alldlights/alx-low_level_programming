@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_endainness - Function that checks the endianess of a system
+ * get_endianness - Function that checks the endianess of a system
  *
  * Return: 0 if big endian else 1
  */
